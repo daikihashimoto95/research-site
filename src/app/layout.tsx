@@ -5,8 +5,19 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import { SITE_MAX_WIDTH } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "橋本大輝のホームページ",
-  description: "研究紹介: 論文とトーク",
+  title: "橋本大輝 / Daiki Hashimoto",
+  description: "Research homepage",
+  openGraph: {
+    title: "橋本大輝 / Daiki Hashimoto",
+    description: "Research homepage",
+    type: "website",
+    locale: "ja_JP",
+  },
+  twitter: {
+    card: "summary",
+    title: "橋本大輝 / Daiki Hashimoto",
+    description: "Research homepage",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
