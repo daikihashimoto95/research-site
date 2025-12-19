@@ -3,6 +3,7 @@ import createMDX from '@next/mdx';
 
 const nextConfig: NextConfig = {
   output: 'export',
+  basePath: '/research-site',
   images: {
     unoptimized: true,
   },
