@@ -7,16 +7,20 @@ import { SITE_MAX_WIDTH } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "橋本大輝 / Daiki Hashimoto",
   description: "Research homepage",
+  metadataBase: new URL('https://daikihashimoto95.github.io/research-site'),
   openGraph: {
     title: "橋本大輝 / Daiki Hashimoto",
     description: "Research homepage",
     type: "website",
     locale: "ja_JP",
-  },
-  twitter: {
-    card: "summary",
-    title: "橋本大輝 / Daiki Hashimoto",
-    description: "Research homepage",
+    images: [
+      {
+        url: '/research-site/opengraph-image.png',
+        width: 1200,
+        height: 630,
+        alt: '橋本大輝 / Daiki Hashimoto',
+      },
+    ],
   },
 };
 
