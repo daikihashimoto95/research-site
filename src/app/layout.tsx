@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     images: [
       {
-        url: '/research-site/opengraph-image',
+        url: '/research-site/opengraph-image.png',
         width: 1200,
         height: 630,
         alt: '橋本大輝 / Daiki Hashimoto',
