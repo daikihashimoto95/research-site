@@ -19,13 +19,13 @@ export default async function HomePage() {
       <div className="space-y-8">
         <div className="grid gap-4 sm:grid-cols-2">
           <Card
-            title="Publications"
+            title="出版&nbsp;&nbsp;&nbsp;Publications"
             description="Publications and preprints"
             href="/publications"
             icon={TbFileText}
           />
           <Card
-            title="Conference talks"
+            title="学会発表&nbsp;&nbsp;&nbsp;Conference talks"
             description="Conference talks and presentations"
             href="/talks"
             icon={TbPresentation}
