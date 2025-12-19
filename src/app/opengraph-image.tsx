@@ -2,8 +2,11 @@ import { ImageResponse } from 'next/og'
 
 // 静的エクスポート用の設定
 export const dynamic = 'force-static'
+export const revalidate = false
 
 // 画像のメタデータ
+export const alt = '橋本大輝 / Daiki Hashimoto - Research homepage'
+
 export const size = {
   width: 1200,
   height: 630,
