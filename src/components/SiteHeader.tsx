@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "./Container";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { SITE_MAX_WIDTH } from "@/lib/constants";
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
@@ -19,6 +20,7 @@ export function SiteHeader() {
         <nav className="flex items-center gap-1">
           <NavLink href="/publications">Publications</NavLink>
           <NavLink href="/talks">Talks</NavLink>
+          <ThemeToggle />
         </nav>
       </Container>
     </header>

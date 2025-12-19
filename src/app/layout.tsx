@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 export const metadata: Metadata = {
   title: "橋本大輝のホームページ",
@@ -9,15 +10,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja">
-      <body className="min-h-dvh bg-white text-zinc-900 antialiased">
-        <SiteHeader />
-        <main className="py-10">{children}</main>
-        <footer className="border-t border-zinc-200 py-8">
-          <div className="mx-auto w-full max-w-3xl px-4 text-sm text-zinc-500">
-            © {new Date().getFullYear()} 橋本大輝
-          </div>
-        </footer>
+    <html lang="ja" suppressHydrationWarning>
+      <body className="min-h-dvh antialiased">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <SiteHeader />
+          <main className="py-10">{children}</main>
+          <footer className="border-t py-8">
+            <div className="mx-auto w-full max-w-3xl px-4 text-sm text-muted-foreground">
+              © {new Date().getFullYear()} 橋本大輝
+            </div>
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );
