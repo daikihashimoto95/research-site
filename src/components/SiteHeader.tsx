@@ -14,12 +14,19 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <Container className={`flex h-14 items-center justify-between ${SITE_MAX_WIDTH}`}>
-        <Link href="/" className="font-semibold tracking-tight hover:opacity-80 transition-opacity text-lg font-[family-name:var(--font-playfair)]">
-          Daiki Hashimoto's webpage
+        <Link href="/" className="font-semibold tracking-tight hover:opacity-80 transition-opacity text-base sm:text-lg font-[family-name:var(--font-playfair)]">
+          <span className="hidden sm:inline">Daiki Hashimoto's webpage</span>
+          <span className="sm:hidden">D. Hashimoto</span>
         </Link>
-        <nav className="flex items-center gap-1">
-          <NavLink href="/publications">Publications</NavLink>
-          <NavLink href="/presentations">Presentations</NavLink>
+        <nav className="flex items-center gap-0.5 sm:gap-1">
+          <NavLink href="/publications">
+            <span className="hidden sm:inline">Publications</span>
+            <span className="sm:hidden">Pubs</span>
+          </NavLink>
+          <NavLink href="/presentations">
+            <span className="hidden sm:inline">Presentations</span>
+            <span className="sm:hidden">Pres</span>
+          </NavLink>
           <ThemeToggle />
         </nav>
       </Container>
