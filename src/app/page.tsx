@@ -4,7 +4,7 @@ import { Card } from "@/components/Card"
 import { MDXContent } from "@/components/MDXContent"
 import { getContentBySlug } from "@/lib/mdx"
 import { SITE_MAX_WIDTH } from "@/lib/constants"
-import { TbFileText, TbPresentation } from "react-icons/tb"
+import { TbBooks, TbPresentation } from "react-icons/tb"
 
 export default async function HomePage() {
   const content = getContentBySlug('pages', 'index')
@@ -24,10 +24,10 @@ export default async function HomePage() {
             title="出版&nbsp;&nbsp;&nbsp;Publications"
             description="Publications and preprints"
             href="/publications"
-            icon={TbFileText}
+            icon={TbBooks}
           />
           <Card
-            title="学会発表&nbsp;&nbsp;&nbsp;Conference talks"
+            title="学会発表&nbsp;&nbsp;&nbsp;Conference presentations"
             description="Conference talks and presentations"
             href="/talks"
             icon={TbPresentation}

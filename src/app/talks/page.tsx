@@ -21,14 +21,14 @@ export default async function TalksPage() {
       <div className="grid gap-4 sm:grid-cols-2 mb-8">
         <Card
           title="国内会議&nbsp;&nbsp;&nbsp;Domestic conferences"
-          description="国内学会での発表"
+          description="国内会議での発表"
           href="#domestic-conference"
           icon={TbMapPin}
           className="[&_[data-card-header]]:py-2 [&_[data-card-header]]:px-4 [&_[data-card-content]]:pb-2 [&_[data-card-content]]:px-4"
         />
         <Card
           title="国際会議&nbsp;&nbsp;&nbsp;International conferences"
-          description="国際学会での発表"
+          description="国際会議での発表"
           href="#international-conference"
           icon={TbWorld}
           className="[&_[data-card-header]]:py-2 [&_[data-card-header]]:px-4 [&_[data-card-content]]:pb-2 [&_[data-card-content]]:px-4"
