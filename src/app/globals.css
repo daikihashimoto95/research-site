@@ -82,5 +82,6 @@
 @layer base {
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-noto-sans-jp), var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 }

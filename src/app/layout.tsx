@@ -3,6 +3,18 @@ import type { Metadata } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { SITE_MAX_WIDTH } from "@/lib/constants";
+import { Inter, Noto_Sans_JP } from "next/font/google";
+
+const inter = Inter({ 
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const notoSansJP = Noto_Sans_JP({ 
+  subsets: ["latin"],
+  variable: "--font-noto-sans-jp",
+  weight: ["400", "500", "700"],
+});
 
 export const metadata: Metadata = {
   title: "橋本大輝 / Daiki Hashimoto",
@@ -27,7 +39,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className="min-h-dvh antialiased">
+      <body className={`min-h-dvh antialiased ${inter.variable} ${notoSansJP.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SiteHeader />
           <main className="py-10">{children}</main>

@@ -40,7 +40,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </h4>
     ),
     p: ({ children }) => (
-      <p className="leading-7 [&:not(:first-child)]:mt-6">
+      <p className="leading-7 [&:not(:first-child)]:mt-6 text-base font-normal" style={{ fontWeight: 400 }}>
         {processChildren(children)}
       </p>
     ),

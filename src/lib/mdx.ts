@@ -24,6 +24,8 @@ export interface ContentItem {
   slug: string
   metadata: ContentMetadata
   content: string
+  contentAbove?: string
+  contentBelow?: string
 }
 
 export function getContentBySlug(type: ContentType, slug: string): ContentItem | null {
@@ -32,6 +34,20 @@ export function getContentBySlug(type: ContentType, slug: string): ContentItem |
     const fullPath = path.join(contentDirectory, type, `${realSlug}.mdx`)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
+
+    // Split content by <!-- cards --> marker
+    const cardsSeparator = '<!-- cards -->'
+    const parts = content.split(cardsSeparator)
+    
+    if (parts.length === 2) {
+      return {
+        slug: realSlug,
+        metadata: data as ContentMetadata,
+        content,
+        contentAbove: parts[0].trim(),
+        contentBelow: parts[1].trim(),
+      }
+    }
 
     return {
       slug: realSlug,

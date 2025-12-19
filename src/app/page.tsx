@@ -17,6 +17,8 @@ export default async function HomePage() {
       />
 
       <div className="space-y-8">
+        {content?.contentAbove && <MDXContent content={content.contentAbove} />}
+
         <div className="grid gap-4 sm:grid-cols-2">
           <Card
             title="出版&nbsp;&nbsp;&nbsp;Publications"
@@ -32,7 +34,7 @@ export default async function HomePage() {
           />
         </div>
 
-        {content && <MDXContent content={content.content} />}
+        {content?.contentBelow && <MDXContent content={content.contentBelow} />}
       </div>
     </Container>
   )

@@ -13,8 +13,16 @@ import {
   TbUser,
   TbPencil,
   TbNotebook,
-  TbBooks
+  TbBooks,
+  TbMail,
+  TbBrandGithub,
+  TbBrandX,
+  TbBrandLinkedin,
+  TbBuilding,
+  TbSchool
 } from 'react-icons/tb'
+import { SiOrcid } from 'react-icons/si'
+import { FaTwitter } from 'react-icons/fa'
 
 const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
   ':star:': TbStar,
@@ -24,13 +32,21 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = 
   ':file:': TbFileText,
   ':presentation:': TbPresentation,
   ':check:': TbCheck,
-  ':x:': TbX,
   ':alert:': TbAlertCircle,
   ':info:': TbInfoCircle,
   ':person:': TbUser,
   ':memo:': TbPencil,
   ':notebook:': TbNotebook,
   ':books:': TbBooks,
+  ':email:': TbMail,
+  ':github:': TbBrandGithub,
+  ':twitter:': FaTwitter,
+  ':twitter-bird:': FaTwitter,
+  ':x:': TbBrandX,
+  ':linkedin:': TbBrandLinkedin,
+  ':orcid:': SiOrcid,
+  ':building:': TbBuilding,
+  ':school:': TbSchool,
 }
 
 export function replaceIconsInText(text: string | React.ReactNode, className: string = "inline h-[1em] w-[1em] align-text-bottom"): React.ReactNode {
@@ -38,7 +54,7 @@ export function replaceIconsInText(text: string | React.ReactNode, className: st
   
   const parts: React.ReactNode[] = []
   let lastIndex = 0
-  const regex = /:(star|award|pin|world|file|presentation|check|x|alert|info|person|memo|notebook|books):/g
+  const regex = /:(star|award|pin|world|file|presentation|check|x|alert|info|person|memo|notebook|books|email|github|twitter|twitter-bird|linkedin|orcid|building|school):/g
   let match: RegExpExecArray | null
   
   while ((match = regex.exec(text)) !== null) {

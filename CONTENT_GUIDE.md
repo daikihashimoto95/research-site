@@ -1,5 +1,55 @@
 # Research Site - MDX Content Guide
 
+## アイコン記法
+
+マークダウン内で絵文字記法を使ってアイコンを表示できます。
+
+### 使用可能なアイコン一覧
+
+#### 一般
+- `:person:` - 人物アイコン
+- `:memo:` - メモ・鉛筆アイコン
+- `:notebook:` - ノートアイコン
+- `:books:` - 本アイコン
+- `:star:` - 星アイコン
+- `:award:` - 賞・トロフィーアイコン
+- `:pin:` - ピン・場所アイコン
+- `:world:` - 地球・ウェブアイコン
+- `:file:` - ファイルアイコン
+- `:presentation:` - プレゼンテーションアイコン
+
+#### 連絡先
+- `:email:` - メールアイコン
+- `:github:` - GitHubアイコン
+- `:twitter:` または `:twitter-bird:` - Twitter鳥アイコン
+- `:x:` - X (Twitter)アイコン
+- `:linkedin:` - LinkedInアイコン
+- `:orcid:` - ORCID iDアイコン
+- `:building:` - 所属・組織アイコン
+- `:school:` - 大学・学校アイコン
+
+#### ステータス
+- `:check:` - チェックマーク
+- `:x:` - バツマーク
+- `:alert:` - 警告アイコン
+- `:info:` - 情報アイコン
+
+### 使用例
+
+```markdown
+## :person: 橋本大輝
+
+:email: example@university.ac.jp  
+:github: [username](https://github.com/username)  
+:orcid: [0000-0000-0000-0000](https://orcid.org/0000-0000-0000-0000)
+
+## :memo: 研究紹介
+
+量子多体傷跡状態について研究しています。
+```
+
+---
+
 ## マークダウンでコンテンツを編集する方法
 
 このサイトではMDX（Markdown + JSX）を使用してコンテンツを管理できます。
