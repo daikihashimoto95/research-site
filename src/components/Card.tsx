@@ -12,6 +12,7 @@ export function Card({
   badge,
   icon: Icon,
   className,
+  onClick,
 }: {
   title: string;
   meta?: string;
@@ -20,6 +21,7 @@ export function Card({
   badge?: string;
   icon?: React.ComponentType<{ className?: string }>;
   className?: string;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }) {
   const Inner = (
     <ShadcnCard className={cn("transition-all hover:shadow-md", className)}>
@@ -48,7 +50,7 @@ export function Card({
   );
 
   return href ? (
-    <Link href={href} className="block transition-transform hover:-translate-y-0.5">
+    <Link href={href} className="block transition-transform hover:-translate-y-0.5" onClick={onClick}>
       {Inner}
     </Link>
   ) : (
