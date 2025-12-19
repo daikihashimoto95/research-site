@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { SITE_MAX_WIDTH } from "@/lib/constants";
-import { Inter, Noto_Sans_JP } from "next/font/google";
+import { Inter, Noto_Sans_JP, Playfair_Display } from "next/font/google";
 
 const inter = Inter({ 
   subsets: ["latin"],
@@ -14,6 +14,12 @@ const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
   variable: "--font-noto-sans-jp",
   weight: ["400", "500", "700"],
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -39,7 +45,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja" suppressHydrationWarning>
-      <body className={`min-h-dvh antialiased ${inter.variable} ${notoSansJP.variable} font-sans`}>
+      <body className={`min-h-dvh antialiased ${inter.variable} ${notoSansJP.variable} ${playfairDisplay.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SiteHeader />
           <main className="py-10">{children}</main>

@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { replaceIconsInText, processChildren } from '@/lib/icons'
+import { CollapsibleYear } from '@/components/CollapsibleYear'
 
 function slugify(text: string): string {
   return text
@@ -80,7 +81,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     a: ({ children, href }) => (
       <a
         href={href}
-        className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+        className="font-medium underline underline-offset-4 text-[#2563eb] dark:text-[#60a5fa] hover:text-[#1d4ed8] dark:hover:text-[#93c5fd]"
         target={href?.startsWith('http') ? '_blank' : undefined}
         rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
       >
@@ -105,6 +106,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </td>
     ),
+    CollapsibleYear,
     Card,
     CardContent,
     CardDescription,

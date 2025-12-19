@@ -29,7 +29,7 @@ export default async function HomePage() {
           <Card
             title="学会発表&nbsp;&nbsp;&nbsp;Conference presentations"
             description="Conference talks and presentations"
-            href="/talks"
+            href="/presentations"
             icon={TbPresentation}
           />
         </div>
