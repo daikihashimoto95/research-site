@@ -16,17 +16,17 @@ export function ScrollToCard({ title, description, targetId, icon, className }: 
   const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault()
     // h2要素のテキストコンテンツで検索
-    const headings = document.querySelectorAll('h2')
-    let target: HTMLElement | null = null
+    const headings = Array.from(document.querySelectorAll('h2'))
     
-    headings.forEach((heading) => {
+    const target = headings.find((heading) => {
       const text = heading.textContent || ''
       // targetIdに対応するテキストを含むh2を探す
-      if (targetId === 'domestic-conference' && text.includes('国内会議')) {
-        target = heading
-      } else if (targetId === 'international-conference' && text.includes('国際会議')) {
-        target = heading
+      if (targetId === 'domestic-conference') {
+        return text.includes('国内会議')
+      } else if (targetId === 'international-conference') {
+        return text.includes('国際会議')
       }
+      return false
     })
     
     if (target) {
