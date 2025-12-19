@@ -5,8 +5,8 @@ import { MDXContent } from '@/components/MDXContent'
 import { getContentBySlug } from '@/lib/mdx'
 import { SITE_MAX_WIDTH } from '@/lib/constants'
 
-export default async function PapersPage() {
-  const content = getContentBySlug('pages', 'papers')
+export default async function PublicationsPage() {
+  const content = getContentBySlug('pages', 'publications')
 
   if (!content) {
     notFound()

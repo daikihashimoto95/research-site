@@ -17,7 +17,7 @@ export function SiteHeader() {
           橋本大輝のホームページ
         </Link>
         <nav className="flex items-center gap-1">
-          <NavLink href="/papers">Publications</NavLink>
+          <NavLink href="/publications">Publications</NavLink>
           <NavLink href="/talks">Talks</NavLink>
         </nav>
       </Container>

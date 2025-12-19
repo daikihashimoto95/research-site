@@ -21,7 +21,7 @@ export default async function HomePage() {
           <Card
             title="Publications"
             description="Publications and preprints"
-            href="/papers"
+            href="/publications"
             icon={TbFileText}
           />
           <Card
