@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   title: "橋本大輝 / Daiki Hashimoto",
   description: "Research homepage",
   metadataBase: new URL('https://daikihashimoto95.github.io/research-site'),
+  icons: {
+    icon: '/research-site/icon.png',
+  },
   openGraph: {
     title: "橋本大輝 / Daiki Hashimoto",
     description: "Research homepage",
