@@ -4,7 +4,7 @@ import { Card } from "@/components/Card"
 import { MDXContent } from "@/components/MDXContent"
 import { getContentBySlug } from "@/lib/mdx"
 import { SITE_MAX_WIDTH } from "@/lib/constants"
-import { TbBooks, TbPresentation } from "react-icons/tb"
+import { TbBooks, TbNotebook, TbPresentation } from "react-icons/tb"
 
 export default async function HomePage() {
   const content = getContentBySlug('pages', 'index')
@@ -19,7 +19,7 @@ export default async function HomePage() {
       <div className="space-y-8">
         {content?.contentAbove && <MDXContent content={content.contentAbove} />}
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <Card
             title="出版&nbsp;&nbsp;&nbsp;Publications"
             description="Publications and preprints"
@@ -31,6 +31,12 @@ export default async function HomePage() {
             description="Conference talks and presentations"
             href="/presentations"
             icon={TbPresentation}
+          />
+          <Card
+            title="経歴　CV"
+            description="Curriculum vitae"
+            href="/cv"
+            icon={TbNotebook}
           />
         </div>
 

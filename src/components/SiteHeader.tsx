@@ -5,7 +5,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { SITE_MAX_WIDTH } from "@/lib/constants";
 
 const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <Button variant="ghost" size="sm" asChild>
+  <Button variant="ghost" size="sm" className="px-2 sm:px-3" asChild>
     <Link href={href}>{children}</Link>
   </Button>
 );
@@ -14,8 +14,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <Container className={`flex h-14 items-center justify-between ${SITE_MAX_WIDTH}`}>
-        <Link href="/" className="font-semibold tracking-tight hover:opacity-80 transition-opacity text-base sm:text-lg font-[family-name:var(--font-playfair)]">
-          <span className="hidden sm:inline">Daiki Hashimoto's webpage</span>
+        <Link href="/" className="font-semibold tracking-tight hover:opacity-80 transition-opacity text-sm sm:text-lg font-[family-name:var(--font-playfair)]">
+          <span className="hidden sm:inline">Daiki Hashimoto&apos;s webpage</span>
           <span className="sm:hidden">D. Hashimoto</span>
         </Link>
         <nav className="flex items-center gap-0.5 sm:gap-1">
@@ -27,6 +27,7 @@ export function SiteHeader() {
             <span className="hidden sm:inline">Presentations</span>
             <span className="sm:hidden">Pres</span>
           </NavLink>
+          <NavLink href="/cv">CV</NavLink>
           <ThemeToggle />
         </nav>
       </Container>

@@ -40,6 +40,7 @@ research-site/
 │   │   ├── page/[slug]/  # 動的ページ (/page/[slug])
 │   │   ├── publications/ # 論文一覧ページ (/publications)
 │   │   ├── presentations/# 発表一覧ページ (/presentations)
+│   │   ├── cv/           # 経歴ページ (/cv)
 │   │   └── talks/        # トーク一覧ページ (/talks)
 │   ├── components/       # Reactコンポーネント
 │   ├── content/          # MDXコンテンツファイル
@@ -56,6 +57,7 @@ research-site/
 - `index.mdx` - トップページ
 - `publications.mdx` - 論文一覧
 - `presentations.mdx` - 発表一覧
+- `cv.mdx` - 経歴（学歴、今後は職歴・外部資金・受賞も追加可能）
 
 MDXファイルを編集すると、開発サーバーが自動的にリロードします。
 
