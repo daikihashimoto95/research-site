@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { SITE_MAX_WIDTH } from "@/lib/constants";
+import { SITE_DESCRIPTION, SITE_URL } from "@/lib/seo";
 import { Inter, Noto_Sans_JP, Playfair_Display } from "next/font/google";
 
 const inter = Inter({ 
@@ -25,14 +26,17 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "橋本大輝 / Daiki Hashimoto",
-  description: "Research homepage",
-  metadataBase: new URL('https://daikihashimoto95.github.io/research-site'),
+  description: SITE_DESCRIPTION,
+  verification: {
+    google: "NvqelDiPIKC2QElgFt9zhYMfKx6wpYj-B8rdgkWFhqY",
+  },
+  metadataBase: new URL(SITE_URL),
   icons: {
     icon: '/research-site/icon.png',
   },
   openGraph: {
     title: "橋本大輝 / Daiki Hashimoto",
-    description: "Research homepage",
+    description: SITE_DESCRIPTION,
     type: "website",
     locale: "ja_JP",
     images: [
