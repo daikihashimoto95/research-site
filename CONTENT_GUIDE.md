@@ -184,6 +184,19 @@ date: "2025-12-19"
 ### Markdownの記法
 
 #### 見出し
+
+日本語と英語を併記する見出しと `title` は、間に `&nbsp;&nbsp;&nbsp;` を入れ、前後に通常のスペースを追加しません。
+
+```mdx
+title: "経歴&nbsp;&nbsp;&nbsp;CV"
+
+## 学歴&nbsp;&nbsp;&nbsp;Education
+```
+
+表示時は共通の `HeadingText` コンポーネントが日英の区切りを読み取り、CSSで間隔を `1rem`（標準16px、`gap-x-4`）に統一します。画面が狭い場合は英語部分を折り返します。JSXで直接記述する日英見出しも `flex flex-wrap items-baseline gap-x-4 gap-y-1` を使用してください。
+
+余白の考え方は、デジタル庁デザインシステムの[余白](https://design.digital.go.jp/dads/foundations/spacing/)と[アクセシビリティ](https://design.digital.go.jp/dads/foundations/spacing/accessibility/)を参考にしています。16pxはこのサイトで採用する間隔です。
+
 ```markdown
 # H1見出し
 ## H2見出し

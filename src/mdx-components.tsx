@@ -4,6 +4,7 @@ import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { ContactIcon, processChildren } from '@/lib/icons'
 import { CollapsibleYear } from '@/components/CollapsibleYear'
+import { HeadingText } from '@/components/HeadingText'
 
 function slugify(text: string): string {
   return text
@@ -22,25 +23,25 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: ({ children }) => (
       <h1 className="scroll-mt-4 text-[1.75rem]/9 font-medium tracking-normal text-balance mb-4">
-        {processChildren(children)}
+        <HeadingText>{children}</HeadingText>
       </h1>
     ),
     h2: ({ children, id: explicitId }) => {
       const id = explicitId ?? (typeof children === 'string' ? slugify(children) : undefined)
       return (
         <h2 id={id} className="scroll-mt-4 border-b border-border pb-3 text-[1.375rem]/7 font-medium tracking-normal text-balance first:mt-0 mt-12 mb-5">
-          {processChildren(children)}
+          <HeadingText>{children}</HeadingText>
         </h2>
       )
     },
     h3: ({ children }) => (
       <h3 className="scroll-mt-4 text-base/6 font-medium tracking-normal mt-8 mb-4">
-        {processChildren(children)}
+        <HeadingText>{children}</HeadingText>
       </h3>
     ),
     h4: ({ children }) => (
       <h4 className="scroll-mt-4 text-sm/5 font-medium tracking-normal mt-6 mb-3">
-        {processChildren(children)}
+        <HeadingText>{children}</HeadingText>
       </h4>
     ),
     p: ({ children }) => (
