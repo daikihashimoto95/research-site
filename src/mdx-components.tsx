@@ -2,7 +2,7 @@ import type { MDXComponents } from 'mdx/types'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
-import { replaceIconsInText, processChildren } from '@/lib/icons'
+import { processChildren } from '@/lib/icons'
 import { CollapsibleYear } from '@/components/CollapsibleYear'
 
 function slugify(text: string): string {
@@ -18,30 +18,30 @@ function slugify(text: string): string {
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: ({ children }) => (
-      <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl mb-4">
+      <h1 className="scroll-m-20 text-[1.75rem]/9 sm:text-[2rem]/10 font-semibold tracking-normal text-balance mb-4">
         {processChildren(children)}
       </h1>
     ),
     h2: ({ children }) => {
       const id = typeof children === 'string' ? slugify(children) : undefined
       return (
-        <h2 id={id} className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 mt-10 mb-4">
+        <h2 id={id} className="scroll-m-20 border-b pb-2 text-2xl/8 font-semibold tracking-normal text-balance first:mt-0 mt-10 mb-4">
           {processChildren(children)}
         </h2>
       )
     },
     h3: ({ children }) => (
-      <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight mt-8 mb-4">
+      <h3 className="scroll-m-20 text-xl/7 font-semibold tracking-normal mt-8 mb-4">
         {processChildren(children)}
       </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mt-6 mb-3">
+      <h4 className="scroll-m-20 text-lg/7 font-semibold tracking-normal mt-6 mb-3">
         {processChildren(children)}
       </h4>
     ),
     p: ({ children }) => (
-      <p className="leading-7 [&:not(:first-child)]:mt-6 text-base font-normal" style={{ fontWeight: 400 }}>
+      <p className="[&:not(:first-child)]:mt-6 font-normal">
         {processChildren(children)}
       </p>
     ),
@@ -56,7 +56,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </ol>
     ),
     li: ({ children }) => (
-      <li className="leading-7">
+      <li>
         {processChildren(children)}
       </li>
     ),

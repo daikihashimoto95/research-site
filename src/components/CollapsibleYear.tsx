@@ -17,7 +17,7 @@ export function CollapsibleYear({
     <div className="my-8">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center gap-2 text-left scroll-m-20 text-2xl font-semibold tracking-tight mb-4 hover:opacity-70 transition-opacity"
+        className="flex w-full items-center gap-2 text-left scroll-m-20 text-xl/7 font-semibold tracking-normal mb-4 hover:opacity-70 transition-opacity"
       >
         <svg
           className={`h-5 w-5 transition-transform ${isOpen ? 'rotate-90' : ''}`}

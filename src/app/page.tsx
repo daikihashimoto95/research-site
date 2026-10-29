@@ -19,7 +19,7 @@ export default async function HomePage() {
       <div className="space-y-8">
         {content?.contentAbove && <MDXContent content={content.contentAbove} />}
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2">
           <Card
             title="出版&nbsp;&nbsp;&nbsp;Publications"
             description="Publications and preprints"

@@ -34,7 +34,7 @@ export function Card({
               </div>
             )}
             <div className="flex-1">
-              <CardTitle className="text-lg">{title}</CardTitle>
+              <CardTitle>{title}</CardTitle>
               {meta && <CardDescription className="mt-1.5">{meta}</CardDescription>}
             </div>
           </div>
@@ -43,7 +43,7 @@ export function Card({
       </CardHeader>
       {description && (
         <CardContent className="pt-0">
-          <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+          <p className="text-sm/6 text-muted-foreground">{description}</p>
         </CardContent>
       )}
     </ShadcnCard>

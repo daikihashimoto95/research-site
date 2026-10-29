@@ -1,6 +1,6 @@
 'use client'
 
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card'
 import { cn } from '@/lib/cn'
 import React from 'react'
 
@@ -56,14 +56,14 @@ export function ScrollToCard({ title, description, targetId, icon, className }: 
                 </div>
               )}
               <div className="flex-1">
-                <CardTitle className="text-lg">{title}</CardTitle>
+                <CardTitle>{title}</CardTitle>
               </div>
             </div>
           </div>
         </CardHeader>
         {description && (
           <CardContent className="pt-0">
-            <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
+            <p className="text-sm/6 text-muted-foreground">{description}</p>
           </CardContent>
         )}
       </Card>
