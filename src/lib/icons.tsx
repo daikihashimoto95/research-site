@@ -49,6 +49,16 @@ const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = 
   ':school:': TbSchool,
 }
 
+export function ContactIcon({ name }: { name: 'email' | 'orcid' | 'github' | 'twitter' }) {
+  const Icon = iconMap[`:${name}:`]
+
+  return (
+    <span aria-hidden="true" className="inline-flex h-4 w-4 shrink-0">
+      <Icon className="h-full w-full" />
+    </span>
+  )
+}
+
 export function replaceIconsInText(text: string | React.ReactNode, className: string = "inline h-[1em] w-[1em] align-text-bottom"): React.ReactNode {
   if (typeof text !== 'string') return text
   

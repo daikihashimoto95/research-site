@@ -19,22 +19,22 @@ export default async function HomePage() {
       <div className="space-y-8">
         {content?.contentAbove && <MDXContent content={content.contentAbove} />}
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 md:grid-cols-3">
           <Card
-            title="出版&nbsp;&nbsp;&nbsp;Publications"
+            title="出版"
             description="Publications and preprints"
             href="/publications"
             icon={TbBooks}
           />
           <Card
-            title="学会発表&nbsp;&nbsp;&nbsp;Conference presentations"
-            description="Conference talks and presentations"
+            title="学会発表"
+            description="Conference presentations"
             href="/presentations"
             icon={TbPresentation}
           />
           <Card
-            title="経歴　CV"
-            description="Curriculum vitae"
+            title="経歴"
+            description="CV / Curriculum vitae"
             href="/cv"
             icon={TbNotebook}
           />

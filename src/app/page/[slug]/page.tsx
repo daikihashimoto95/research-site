@@ -34,7 +34,7 @@ export default async function PageContent({ params }: { params: Promise<{ slug: 
         </div>
       )}
       
-      <MDXContent content={content.content} />
+      <MDXContent content={content.content} variant="records" />
     </Container>
   )
 }

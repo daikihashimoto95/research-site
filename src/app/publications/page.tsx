@@ -15,7 +15,7 @@ export default async function PublicationsPage() {
   return (
     <Container className={SITE_MAX_WIDTH}>
       <SectionTitle title={content.metadata.title} />
-      <MDXContent content={content.content} />
+      <MDXContent content={content.content} variant="records" />
     </Container>
   )
 }

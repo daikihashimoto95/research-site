@@ -6,46 +6,32 @@ import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = React.useState(false)
 
   React.useEffect(() => {
     setMounted(true)
   }, [])
 
-  if (!mounted) {
-    return (
-      <div className="flex items-center gap-1">
-        <Button variant="ghost" size="icon" className="h-9 w-9" disabled>
-          <TbSun className="h-5 w-5" />
-        </Button>
-        <Button variant="ghost" size="icon" className="h-9 w-9" disabled>
-          <TbMoon className="h-5 w-5" />
-        </Button>
-      </div>
-    )
-  }
+  const isDark = mounted && resolvedTheme === "dark"
+  const label = !mounted
+    ? "表示テーマを切り替え / Change color theme"
+    : isDark
+      ? "ライトモードに切り替え / Switch to light mode"
+      : "ダークモードに切り替え / Switch to dark mode"
 
   return (
-    <div className="flex items-center gap-1">
-      <Button
-        variant={theme === "light" ? "default" : "ghost"}
-        size="icon"
-        className="h-9 w-9"
-        onClick={() => setTheme("light")}
-      >
-        <TbSun className="h-5 w-5" />
-        <span className="sr-only">ライトモード</span>
-      </Button>
-      <Button
-        variant={theme === "dark" ? "default" : "ghost"}
-        size="icon"
-        className="h-9 w-9"
-        onClick={() => setTheme("dark")}
-      >
-        <TbMoon className="h-5 w-5" />
-        <span className="sr-only">ダークモード</span>
-      </Button>
-    </div>
+    <Button
+      type="button"
+      variant="ghost"
+      size="icon"
+      className="h-11 w-11 rounded-full text-muted-foreground hover:text-foreground"
+      disabled={!mounted}
+      aria-label={label}
+      title={label}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+    >
+      {isDark ? <TbSun aria-hidden="true" /> : <TbMoon aria-hidden="true" />}
+    </Button>
   )
 }

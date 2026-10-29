@@ -2,41 +2,44 @@ import type { MDXComponents } from 'mdx/types'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
-import { processChildren } from '@/lib/icons'
+import { ContactIcon, processChildren } from '@/lib/icons'
 import { CollapsibleYear } from '@/components/CollapsibleYear'
 
 function slugify(text: string): string {
   return text
     .toString()
+    .replace(/:[a-z][a-z-]*:/gi, '')
+    .replace(/&nbsp;|\u00A0/g, ' ')
     .toLowerCase()
     .trim()
     .replace(/\s+/g, '-')
     .replace(/[^\w\-]+/g, '')
     .replace(/\-\-+/g, '-')
+    .replace(/^-|-$/g, '')
 }
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: ({ children }) => (
-      <h1 className="scroll-m-20 text-[1.75rem]/9 sm:text-[2rem]/10 font-semibold tracking-normal text-balance mb-4">
+      <h1 className="scroll-mt-4 text-[1.75rem]/9 font-medium tracking-normal text-balance mb-4">
         {processChildren(children)}
       </h1>
     ),
-    h2: ({ children }) => {
-      const id = typeof children === 'string' ? slugify(children) : undefined
+    h2: ({ children, id: explicitId }) => {
+      const id = explicitId ?? (typeof children === 'string' ? slugify(children) : undefined)
       return (
-        <h2 id={id} className="scroll-m-20 border-b pb-2 text-2xl/8 font-semibold tracking-normal text-balance first:mt-0 mt-10 mb-4">
+        <h2 id={id} className="scroll-mt-4 border-b border-border pb-3 text-[1.375rem]/7 font-medium tracking-normal text-balance first:mt-0 mt-12 mb-5">
           {processChildren(children)}
         </h2>
       )
     },
     h3: ({ children }) => (
-      <h3 className="scroll-m-20 text-xl/7 font-semibold tracking-normal mt-8 mb-4">
+      <h3 className="scroll-mt-4 text-base/6 font-medium tracking-normal mt-8 mb-4">
         {processChildren(children)}
       </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="scroll-m-20 text-lg/7 font-semibold tracking-normal mt-6 mb-3">
+      <h4 className="scroll-mt-4 text-sm/5 font-medium tracking-normal mt-6 mb-3">
         {processChildren(children)}
       </h4>
     ),
@@ -81,7 +84,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     a: ({ children, href }) => (
       <a
         href={href}
-        className="font-medium underline underline-offset-4 text-[#2563eb] dark:text-[#60a5fa] hover:text-[#1d4ed8] dark:hover:text-[#93c5fd]"
+        className="rounded-sm font-medium text-primary underline decoration-primary/40 underline-offset-4 hover:decoration-current focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         target={href?.startsWith('http') ? '_blank' : undefined}
         rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
       >
@@ -90,7 +93,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ),
     hr: () => <Separator className="my-8" />,
     table: ({ children }) => (
-      <div className="my-6 w-full overflow-y-auto">
+      <div className="my-6 w-full overflow-x-auto">
         <table className="w-full">
           {children}
         </table>
@@ -107,6 +110,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </td>
     ),
     CollapsibleYear,
+    ContactIcon,
     Card,
     CardContent,
     CardDescription,
